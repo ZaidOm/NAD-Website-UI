@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import fire from './../config/Fire';
 
 class LinkYourCameraForm extends Component {
     constructor() {
@@ -8,8 +9,7 @@ class LinkYourCameraForm extends Component {
         this.state = {
             email: '',
             password: '',
-            name: '',
-            hasAgreed: false
+            cameraid: '',
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -17,20 +17,33 @@ class LinkYourCameraForm extends Component {
     }
 
     handleChange(e) {
-        let target = e.target;
-        let value = target.type === 'checkbox' ? target.checked : target.value;
-        let name = target.name;
-
-        this.setState({
-          [name]: value
-        });
+        let change = {}
+        change[e.target.name] = e.target.value
+        this.setState(change)
     }
 
     handleSubmit(e) {
         e.preventDefault();
-
-        console.log('The form was submitted with the following data:');
-        console.log(this.state);
+        var firestore = fire.firestore();
+        firestore.settings({
+            timestampsInSnapshots: true
+        })
+        fire.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
+        .then(
+        (user)=>{
+            if(user){
+            const userRef = firestore.collection("users").add({
+                cameraID: this.state.cameraid,
+                email: this.state.email
+                });
+            }
+        })
+        .catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // ...
+        });
     }
 
     render() {
@@ -39,7 +52,7 @@ class LinkYourCameraForm extends Component {
             <form onSubmit={this.handleSubmit} className="FormFields">
               <div className="FormField">
                 <label className="FormField__Label" htmlFor="name">Camera ID</label>
-                <input type="text" id="name" className="FormField__Input" placeholder="Enter your full name" name="name" value={this.state.name} onChange={this.handleChange} />
+                <input type="text" id="cameraid" className="FormField__Input" placeholder="Enter your Camera ID" name="cameraid" value={this.state.cameraid} onChange={this.handleChange} />
               </div>
               <div className="FormField">
                 <label className="FormField__Label" htmlFor="password">Password</label>

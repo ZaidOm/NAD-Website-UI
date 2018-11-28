@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import fire from './../config/Fire';
 
 class SignInForm extends Component {
     constructor() {
@@ -15,20 +16,18 @@ class SignInForm extends Component {
     }
 
     handleChange(e) {
-        let target = e.target;
-        let value = target.type === 'checkbox' ? target.checked : target.value;
-        let name = target.name;
-
-        this.setState({
-          [name]: value
-        });
+        let change = {}
+        change[e.target.name] = e.target.value
+        this.setState(change)
     }
 
     handleSubmit(e) {
         e.preventDefault();
 
-        console.log('The form was submitted with the following data:');
-        console.log(this.state);
+        fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then((u)=>{
+        }).catch((error) => {
+            console.log(error);
+        });
     }
 
     render() {
@@ -36,13 +35,13 @@ class SignInForm extends Component {
         <div className="FormCenter">
             <form onSubmit={this.handleSubmit} className="FormFields" onSubmit={this.handleSubmit}>
             <div className="FormField">
-                <label className="FormField__Label" htmlFor="email">Camera ID</label>
-                <input type="email" id="email" className="FormField__Input" placeholder="Enter your email" name="email" value={this.state.email} onChange={this.handleChange} />
+                <label className="FormField__Label" htmlFor="email">E-Mail Address</label>
+                <input type="email" id="email" className="FormField__Input" placeholder="Enter your E-Mail Address" name="email" value={this.state.email} onChange={this.handleChange} />
               </div>
 
               <div className="FormField">
                 <label className="FormField__Label" htmlFor="password">Password</label>
-                <input type="password" id="password" className="FormField__Input" placeholder="Enter your password" name="password" value={this.state.password} onChange={this.handleChange} />
+                <input type="password" id="password" className="FormField__Input" placeholder="Enter your Password" name="password" value={this.state.password} onChange={this.handleChange} />
               </div>
 
               <div className="FormField">

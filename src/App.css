@@ -4,11 +4,6 @@
   color: white;
 }
 
-.App__Aside {
-  width: 50%;
-  background-color: #66DAC7;
-}
-
 .App__Form {
   width: 100%;
   background-color: #015E51;
@@ -132,11 +127,3 @@
   top: 1.5px;
 }
 
-.FormField__TermsLink {
-  color: white;
-  border-bottom: 1px solid #199087;
-  text-decoration: none;
-  display: inline-block;
-  padding-bottom: 2px;
-  margin-left: 5px;
-}
