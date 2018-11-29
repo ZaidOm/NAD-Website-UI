@@ -6,7 +6,7 @@
 
 .App__Form {
   width: 100%;
-  background-color: #015E51;
+  background-color: #090E2E;
   padding: 25px 40px;
   overflow: auto;
 }
@@ -107,6 +107,7 @@
   padding: 15px 70px;
   font-size: .8em;
   font-weight: 500;
+  cursor: pointer;
 }
 
 .FormField__Link {

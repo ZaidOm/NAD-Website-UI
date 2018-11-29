@@ -8,11 +8,15 @@ class SignInForm extends Component {
 
         this.state = {
             email: '',
-            password: ''
+            password: '',
+            visible: true
+            
         };
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.onDismiss = this.onDismiss.bind(this);
+        
     }
 
     handleChange(e) {
@@ -26,10 +30,18 @@ class SignInForm extends Component {
 
         fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then((u)=>{
         }).catch((error) => {
-            console.log(error);
+            return (
+                alert("Invalid Login! Please Try again.")
+            );
         });
     }
 
+    onDismiss() {
+        this.setState({ visible: false });
+    }
+
+    
+    
     render() {
         return (
         <div className="FormCenter">
@@ -38,7 +50,7 @@ class SignInForm extends Component {
                 <label className="FormField__Label" htmlFor="email">E-Mail Address</label>
                 <input type="email" id="email" className="FormField__Input" placeholder="Enter your E-Mail Address" name="email" value={this.state.email} onChange={this.handleChange} />
               </div>
-
+                
               <div className="FormField">
                 <label className="FormField__Label" htmlFor="password">Password</label>
                 <input type="password" id="password" className="FormField__Input" placeholder="Enter your Password" name="password" value={this.state.password} onChange={this.handleChange} />
