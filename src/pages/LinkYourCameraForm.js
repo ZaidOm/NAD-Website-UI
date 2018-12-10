@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import fire from './../config/Fire';
+<<<<<<< HEAD
 import { Button } from 'reactstrap';
+=======
+>>>>>>> ca3c196258697817072b067828f44c0088f921ef
 
 class LinkYourCameraForm extends Component {
     constructor() {
@@ -102,7 +105,11 @@ class LinkYourCameraForm extends Component {
               </div>
 
               <div className="FormField">
+<<<<<<< HEAD
                   <Button className="FormField__Button mr-20">Link Your Camera</Button> <Link to="/sign-in" className="FormField__Link">I've Already Linked my Camera</Link>
+=======
+                  <button className="FormField__Button mr-20">Link Your Camera</button> <Link to="/sign-in" className="FormField__Link">I've Already Linked my Camera</Link>
+>>>>>>> ca3c196258697817072b067828f44c0088f921ef
               </div>
             </form>
           </div>

@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import fire from './../config/Fire';
+<<<<<<< HEAD
 import { Button } from 'reactstrap';
+=======
+>>>>>>> ca3c196258697817072b067828f44c0088f921ef
 
 class SignInForm extends Component {
     constructor() {
@@ -58,7 +61,11 @@ class SignInForm extends Component {
               </div>
 
               <div className="FormField">
+<<<<<<< HEAD
                   <Button className="FormField__Button mr-20">Sign In</Button> <Link to="/" className="FormField__Link">Link Your Camera</Link>
+=======
+                  <button className="FormField__Button mr-20">Sign In</button> <Link to="/" className="FormField__Link">Link Your Camera</Link>
+>>>>>>> ca3c196258697817072b067828f44c0088f921ef
               </div>
             </form>
           </div>

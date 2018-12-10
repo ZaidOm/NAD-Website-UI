@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import fire from './../config/Fire';
+<<<<<<< HEAD
 import { Card, CardImg, CardText, CardBody,
     CardTitle, CardSubtitle, CardDeck, CardHeader, CardFooter, Button, Modal, ModalHeader, ModalBody, ModalFooter, Table } from 'reactstrap';
 import ReactPlayer from 'react-player';
@@ -20,10 +21,13 @@ const styles = {
   };
   
   const mql = window.matchMedia(`(min-width: 800px)`);
+=======
+>>>>>>> ca3c196258697817072b067828f44c0088f921ef
 
 class Home extends Component {
     constructor(props) {
         super(props);
+<<<<<<< HEAD
         this.state = {
             modalDelete: false,
             modalLogout: false,
@@ -251,6 +255,21 @@ class Home extends Component {
                     </div>
                 </div> 
                 </Sidebar>
+=======
+        this.logout = this.logout.bind(this);
+    }
+
+
+    logout() {
+        fire.auth().signOut();
+    }
+
+    render() {
+        return (
+            <div>
+                <h1>Welcome to Home</h1>
+                <button onClick={this.logout}>Logout</button>
+>>>>>>> ca3c196258697817072b067828f44c0088f921ef
             </div>
                 
         );
