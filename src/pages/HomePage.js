@@ -4,8 +4,6 @@ import { Card, CardImg, CardText, CardBody,
     CardTitle, CardSubtitle, CardDeck, CardHeader, CardFooter, Button, Modal, ModalHeader, ModalBody, ModalFooter, Table } from 'reactstrap';
 import ReactPlayer from 'react-player';
 import Sidebar from "react-sidebar";
-import HamburgerIcon from "./../assets/img/hamburger.png";
-import SecurityLogo from "./../assets/img/security.png";
 import SidebarContent from "./../sidebar/sidebar_content";
 
 const styles = {

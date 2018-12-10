@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import MaterialTitlePanel from "./material_title_panel";
-import Dashboard from "./../pages/HomePage";
+import { Link } from 'react-router-dom';
+import fire from './../config/Fire';
 
 const styles = {
   sidebar: {
@@ -40,18 +41,22 @@ const SidebarContent = props => {
       </a>
     );
   }
+  
+  const logout = () => {
+    fire.auth().signOut();
+  }
 
   return (
     <MaterialTitlePanel title="Menu" style={style}>
       <div style={styles.content}>
-        <a href="./../pages/HomePage.js" style={styles.sidebarLink}>
+        <a href="HomePage.js" style={styles.sidebarLink}>
           Dashboard
         </a>
-        <a href="responsive_example.html" style={styles.sidebarLink}>
+        <a href="UserProfile.js" style={styles.sidebarLink}>
           User Profile
         </a>
         <div style={styles.divider} />
-        <a href="responsive_example.html" style={styles.sidebarLink}>
+        <a id="logoutLink" href="#" onClick={logout}>
             Logout
         </a>
       </div>

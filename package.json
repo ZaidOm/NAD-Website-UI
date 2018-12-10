@@ -11,18 +11,12 @@
     "react": "^16.6.3",
     "react-alert": "^4.0.4",
     "react-dom": "^16.6.3",
-<<<<<<< HEAD
     "react-player": "^1.7.1",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.4",
     "react-sidebar": "^3.0.2",
     "react-transition-group": "^2.5.0",
     "reactstrap": "^6.5.0"
-=======
-    "react-router-dom": "^4.2.2",
-    "react-scripts": "1.1.4",
-    "react-transition-group": "^2.5.0"
->>>>>>> ca3c196258697817072b067828f44c0088f921ef
   },
   "scripts": {
     "start": "react-scripts start",
