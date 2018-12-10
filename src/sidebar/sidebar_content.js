@@ -1,9 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 import MaterialTitlePanel from "./material_title_panel";
+<<<<<<< HEAD
 import fire from './../config/Fire';
 import {withRouter} from "react-router-dom";
 import { Link } from 'react-router-dom'
+=======
+import { Link } from 'react-router-dom';
+import fire from './../config/Fire';
+>>>>>>> b11caf6b2915ab6fef7e244c511287a007f319be
 
 const styles = {
   sidebar: {
@@ -23,7 +28,11 @@ const styles = {
   },
   content: {
     padding: "16px",
+<<<<<<< HEAD
     height: "93%",
+=======
+    height: "100%",
+>>>>>>> b11caf6b2915ab6fef7e244c511287a007f319be
     backgroundColor: "#090E2E"
   }
 };
@@ -33,6 +42,7 @@ const SidebarContent = props => {
     ? { ...styles.sidebar, ...props.style }
     : styles.sidebar;
 
+<<<<<<< HEAD
   
   this.state = {
     modal: false
@@ -48,6 +58,21 @@ const SidebarContent = props => {
   const handleClick = () => {
     this.props.history.push("/userprofile");
   };
+=======
+  const links = [];
+
+  for (let ind = 0; ind < 10; ind++) {
+    links.push(
+      <a key={ind} href="#" style={styles.sidebarLink}>
+        Mock menu item {ind}
+      </a>
+    );
+  }
+  
+  const logout = () => {
+    fire.auth().signOut();
+  }
+>>>>>>> b11caf6b2915ab6fef7e244c511287a007f319be
 
   return (
     <MaterialTitlePanel title="Menu" style={style}>
@@ -55,8 +80,16 @@ const SidebarContent = props => {
         <a href="HomePage.js" style={styles.sidebarLink}>
           Dashboard
         </a>
+<<<<<<< HEAD
         <div style={styles.divider} />
         <a id="logoutLink" href="#" onClick={logout} style={styles.sidebarLink}>
+=======
+        <a href="UserProfile.js" style={styles.sidebarLink}>
+          User Profile
+        </a>
+        <div style={styles.divider} />
+        <a id="logoutLink" href="#" onClick={logout}>
+>>>>>>> b11caf6b2915ab6fef7e244c511287a007f319be
             Logout
         </a>
       </div>

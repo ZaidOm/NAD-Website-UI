@@ -144,6 +144,7 @@
   align-items: flex-start; 
   color: #090E2E;
 }
+<<<<<<< HEAD
 .TableName {
   display: flex;
   padding: 25px 40px;
@@ -151,6 +152,8 @@
   align-items: flex-start; 
   color: white;
 }
+=======
+>>>>>>> b11caf6b2915ab6fef7e244c511287a007f319be
 .Dashboard_HeaderText {
   display: flex;
   justify-content: flex-start;
@@ -159,7 +162,11 @@
 }
 .Video_Card {
   position: relative;
+<<<<<<< HEAD
   margin-top: 10px;
+=======
+  margin-top: 50px;
+>>>>>>> b11caf6b2915ab6fef7e244c511287a007f319be
   color: #646F7D;
   width: 30%;
 }
@@ -181,6 +188,7 @@
   table-layout: fixed;
   border-spacing: 10px; 
 }
+<<<<<<< HEAD
 .AddCameraButton {
   flex-direction: row;
   justify-content: center;
@@ -202,3 +210,6 @@
   table-layout: fixed;
   border-spacing: 10px; 
 }
+=======
+
+>>>>>>> b11caf6b2915ab6fef7e244c511287a007f319be

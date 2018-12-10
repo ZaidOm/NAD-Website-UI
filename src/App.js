@@ -30,6 +30,7 @@ class App extends Component {
 
   render() {
     return (
+<<<<<<< HEAD
       <div>
         <Router basename="/react-auth-ui/">
           <div className="App">
@@ -37,6 +38,13 @@ class App extends Component {
           </div>
         </Router>
       </div>
+=======
+      <Router basename="/react-auth-ui/">
+        <div className="App">
+          {this.state.user ? (<Home />) : (<Login/>)}          
+        </div>
+      </Router>
+>>>>>>> b11caf6b2915ab6fef7e244c511287a007f319be
     );
   }
 }
